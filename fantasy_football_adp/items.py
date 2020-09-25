@@ -7,6 +7,7 @@ import scrapy
 
 
 class FantasyFootballAdpItem(scrapy.Item):
+    player = scrapy.Field()
     pos = scrapy.Field()
     age = scrapy.Field()
     g = scrapy.Field()
@@ -18,9 +19,9 @@ class FantasyFootballAdpItem(scrapy.Item):
     pass_int = scrapy.Field()
     rush_att = scrapy.Field()
     rush_yds = scrapy.Field()
-    yds_per_att = scrapy.Field()
+    rush_yds_per_att = scrapy.Field()
     rush_td = scrapy.Field()
-    pass_targets = scrapy.Field()
+    targets = scrapy.Field()
     rec = scrapy.Field()
     rec_yds = scrapy.Field()
     rec_yds_per_rec = scrapy.Field()

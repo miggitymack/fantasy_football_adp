@@ -3,8 +3,8 @@ from fantasy_football_adp.items import FantasyFootballAdpItem
 import json
 
 
-class TennisSpider(Spider):
-    name = "tennis_spider"
+class FantasyFootballAdpSpider(Spider):
+    name = "ff_adp_spider"
     allowed_urls = ['https://www.pro-football-reference.com']
     start_urls = ['https://www.pro-football-reference.com/years/2018/fantasy.htm']
 
@@ -21,9 +21,9 @@ class TennisSpider(Spider):
         pass_int = response.xpath('//table/tbody/tr/td[@data-stat="pass_int"]/text()').extract()[0]
         rush_att = response.xpath('//table/tbody/tr/td[@data-stat="rush_att"]/text()').extract()[0]
         rush_yds = response.xpath('//table/tbody/tr/td[@data-stat="rush_yds"]/text()').extract()[0]
-        yds_per_att = response.xpath('//table/tbody/tr/td[@data-stat="yds_per_att"]/text()').extract()[0]
+        rush_yds_per_att = response.xpath('//table/tbody/tr/td[@data-stat="rush_yds_per_att"]/text()').extract()[0]
         rush_td = response.xpath('//table/tbody/tr/td[@data-stat="rush_td"]/text()').extract()[0]
-        pass_targets = response.xpath('//table/tbody/tr/td[@data-stat="pass_targets"]/text()').extract()[0]
+        targets = response.xpath('//table/tbody/tr/td[@data-stat="targets"]/text()').extract()[0]
         rec = response.xpath('//table/tbody/tr/td[@data-stat="rec"]/text()').extract()[0]
         rec_yds = response.xpath('//table/tbody/tr/td[@data-stat="rec_yds"]/text()').extract()[0]
         rec_yds_per_rec = response.xpath('//table/tbody/tr/td[@data-stat="rec_yds_per_rec"]/text()').extract()[0]
@@ -47,9 +47,9 @@ class TennisSpider(Spider):
         item['pass_int'] = pass_int
         item['rush_att'] = rush_att
         item['rush_yds'] = rush_yds
-        item['yds_per_att'] = yds_per_att
+        item['rush_yds_per_att'] = rush_yds_per_att
         item['rush_td'] = rush_td
-        item['pass_targets'] = pass_targets
+        item['targets'] = targets
         item['rec'] = rec
         item['rec_yds'] = rec_yds
         item['rec_yds_per_rec'] = rec_yds_per_rec
