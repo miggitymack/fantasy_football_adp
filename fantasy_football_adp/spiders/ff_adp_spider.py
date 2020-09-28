@@ -6,7 +6,7 @@ import json
 class FantasyFootballAdpSpider(Spider):
     name = "ff_adp_spider"
     allowed_urls = ['https://www.pro-football-reference.com']
-    start_urls = ['https://www.pro-football-reference.com/years/2018/fantasy.htm']
+    start_urls = ['https://www.pro-football-reference.com/years/2019/fantasy.htm']
 
     def parse(self, response):
         rows = response.xpath('//table/tbody/tr')
